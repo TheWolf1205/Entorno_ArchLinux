@@ -1,0 +1,1 @@
+/home/TheWolf/.zshrc

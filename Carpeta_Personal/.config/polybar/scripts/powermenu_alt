@@ -1,0 +1,39 @@
+#!/bin/bash
+
+
+rofi_command="rofi -theme $HOME/.config/polybar/scripts/themes/powermenu_alt.rasi"
+
+uptime=$(uptime -p | sed -e 's/up //g')
+
+# Options
+shutdown="󰐥 Apagar"
+reboot="󰑓 Reiniciar"
+lock=" Bloquear"
+suspend=" Suspender"
+logout="󰍃 Salir"
+
+# Variable passed to rofi
+options="$lock\n$suspend\n$logout\n$reboot\n$shutdown"
+
+chosen="$(echo -e "$options" | $rofi_command -p "Sistema" -dmenu -selected-row 0)"
+case $chosen in
+    $shutdown)
+        poweroff
+        ;;
+    $reboot)
+        reboot
+        ;;
+    $lock)
+        slimlock
+        ;;
+    $suspend)
+        mpc -q pause
+        amixer set Master mute
+        systemctl suspend
+        slimlock
+        ;;
+    $logout)
+        openbox --exit
+        ;;
+esac
+
