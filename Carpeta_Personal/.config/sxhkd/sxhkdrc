@@ -170,4 +170,4 @@ super + ctrl + {Left,Down,Up,Right}
  
 # Custom move/resize
 alt + super + {Left,Down,Up,Right}
-    /home/TheWolf/.config/bspwm/scripts/bspwm_resize {west,south,north,east}
+    ~/.config/bspwm/scripts/bspwm_resize {west,south,north,east}
