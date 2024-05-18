@@ -14,7 +14,7 @@ while True:
     battery = psutil.sensors_battery()
     percent = round(battery.percent)
     if percent <= MIN_BATTERY_LEVEL:
-        os.system('paplay /home/TheWolf/Audio/Efectos/audioEfecto de Sonido de alerta.mp3')
+        os.system('paplay sonido/audioEfecto de Sonido de alerta.mp3')
         message = f"Bateria Baja: {percent}% restante"
         n = notify2.Notification("¡BATERIA BAJA!", message)
         os.system('paplay /home/TheWolf/Audio/Efectos/audioEfecto_de_Sonido_de_alerta.mp3')
