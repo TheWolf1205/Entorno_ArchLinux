@@ -24,7 +24,7 @@ ctrl + shift + m
 
 # Abrir el rofi
 super + d
-    rofi -show drun -theme /home/TheWolf/.config/rofi/rofi.rasi
+    rofi -show drun
  
 # make sxhkd reload its configuration files:
 super + Escape
@@ -166,7 +166,7 @@ super + ctrl + alt + space
  
 # move a floating window
 super + ctrl + {Left,Down,Up,Right}
-    bspc node -v {-20 0,0 20,0 -20,20 0}
+    bspc node -v {-5 0,0 5,0 -5,5 0}
  
 # Custom move/resize
 alt + super + {Left,Down,Up,Right}

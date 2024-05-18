@@ -58,9 +58,21 @@ alias la='lsd -a --group-dirs=first'
 alias l='lsd --group-dirs=first'
 alias lla='lsd -lha --group-dirs=first'
 alias ls='lsd --group-dirs=first'
+alias lst="sudo lsd -all --total-size"
 alias cat='bat'
 alias comandos="bat /home/TheWolf/.config/sxhkd/sxhkdrc"
 alias img="kitty +kitten icat"
+alias cpp="rsync -avrhP --info=progress2"
+alias camara="mplayer tv:// -tv driver=v4l2:width=640:height=360:device=/dev/video0:fps=60:outfmt=yuy2"
+mvp() {
+  local args=( "$@" )
+  rsync -avrhP --info=progress2 "${args[@]}"
+  for (( i = 1; i < ${#args[@]}; i++ ))
+  do
+    rm -r "${args[$i]}"
+  done
+}
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Plugins

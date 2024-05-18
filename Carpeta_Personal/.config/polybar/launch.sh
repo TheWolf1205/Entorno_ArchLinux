@@ -61,7 +61,7 @@ polybar primary -c ~/.config/polybar/workspace.ini &
 polybar secondary -c ~/.config/polybar/workspace.ini &
 
 #Fondo de pantalla
-feh --bg-fill /home/TheWolf/Imágenes/Fondos/Fondo.jpg &
+bash ~/.config/polybar/scripts/fondos.sh &
 
 #Distribucion de teclado
 setxkbmap latam &

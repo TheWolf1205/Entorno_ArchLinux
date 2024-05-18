@@ -14,7 +14,7 @@ configuration {
 	fg:				#d9d7d6;
 	accent:			#1c252c;
 	darkerAccent:	#162026;
-    active:      	#484e5b;
+  active:      	#484e5b;
 	rad:			12px;
 
 	background-color: @bg;
@@ -23,11 +23,11 @@ configuration {
 
 window {
 	transparency: "real";
-	height: 94%;
-    width: 22%;
+	height: 92%;
+  width: 22%;
 	location: west;
-	x-offset: 7%;
-	y-offset: 0%;
+	x-offset: 0.5%;
+	y-offset: 3%;
 	border-radius: @rad;
 }
 
@@ -40,7 +40,7 @@ inputbar {
 }
 
 textbox {
-    str: "";
+    str: " ";
     expand: false;
     padding: 0 1% 0;
     horizontal-align: 0.5;
@@ -54,16 +54,16 @@ textbox {
 entry{
 	expand: true;
 	padding: 2%;
-    placeholder: "Search";
+  placeholder: "Buscar";
 	border-radius: @rad;
-    background-color: @darkerAccent;
+  background-color: @darkerAccent;
 }
 
 listview {
 	columns: 2;
 	lines: 2;
 	cycle: false;
-    margin: 20px;
+  margin: 20px;
 }
 
 element {
