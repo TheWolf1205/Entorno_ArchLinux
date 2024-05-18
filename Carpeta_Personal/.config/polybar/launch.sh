@@ -22,7 +22,7 @@ xsetroot -cursor_name left_ptr &
 #Notificaciones para la bateria
 systemctl --user restart dunst &
 
-python3 /home/TheWolf/Programas/bateria.py &
+python3 ~/.config/polybar/scripts/bateria.py &
 
 # Gpaste
 gpaste-client start &
