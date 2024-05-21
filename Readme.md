@@ -15,7 +15,7 @@ sudo pacman -Syu linux linux-firmware base base-devel grub os-prober efibootmgr 
 ## Instalación 
 Estos serán los paquetes necesarios para que el entorno funcione correctamente, recuerde que si usted no usa *paru*, también puede usar *yay* sin ningún problema, solo reemplace.
 ```zsh
-paru -Syu git wget sddm sxhkd bspwm ttf-hack-nerd ttf-jetbrains-mono-nerd ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono ttf-iosevka-nerd kitty lsd bat mdcat feh picom lxsession dunst gpaste polybar rofi papirus-icon-theme alsa-utils alsa-plugins alsa-firmware sof-firmware pamixer spotify firejail brave-bin flameshot pavucontrol pulseaudio pulseaudio-alsa pulseaudio-bluetooth brightnessctl zsh zsh-syntax-highlighting zsh-autosuggestions xorg-xsetroot slock mpc
+paru -Syu git wget sddm sxhkd bspwm ttf-hack-nerd ttf-jetbrains-mono-nerd ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono ttf-iosevka-nerd kitty lsd bat mdcat feh picom lxsession dunst gpaste polybar rofi papirus-icon-theme alsa-utils alsa-plugins alsa-firmware sof-firmware pamixer spotify firejail brave-bin flameshot pavucontrol pulseaudio pulseaudio-alsa pulseaudio-bluetooth brightnessctl zsh zsh-syntax-highlighting zsh-autosuggestions xorg-xsetroot slock mpc notify2
 ```
 Ahora activaremos el servicio sddm para iniciar sesión.
 ```zsh
