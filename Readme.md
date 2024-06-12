@@ -15,7 +15,7 @@ sudo pacman -Syu linux linux-firmware base base-devel grub os-prober efibootmgr 
 ## Instalación 
 Estos serán los paquetes necesarios para que el entorno funcione correctamente, recuerde que si usted no usa *paru*, también puede usar *yay* sin ningún problema, solo reemplace.
 ```zsh
-paru -Syu git wget sddm sxhkd bspwm ttf-hack-nerd ttf-jetbrains-mono-nerd ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono ttf-iosevka-nerd kitty lsd bat mdcat feh picom lxsession dunst gpaste polybar rofi papirus-icon-theme alsa-utils alsa-plugins alsa-firmware sof-firmware pamixer spotify firejail brave-bin flameshot pavucontrol pulseaudio pulseaudio-alsa pulseaudio-bluetooth brightnessctl zsh zsh-syntax-highlighting zsh-autosuggestions xorg-xsetroot slock mpc python-notify2
+paru -Syu git wget sddm sxhkd bspwm ttf-hack-nerd ttf-jetbrains-mono-nerd ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono ttf-iosevka-nerd kitty lsd bat mdcat feh picom lxsession dunst gpaste polybar rofi papirus-icon-theme alsa-utils alsa-plugins alsa-firmware sof-firmware pamixer spotify firejail brave-bin flameshot pavucontrol pulseaudio pulseaudio-alsa pulseaudio-bluetooth brightnessctl zsh zsh-syntax-highlighting zsh-autosuggestions xorg-xsetroot slock mpc python-notify2 yad mplayer
 ```
 Ahora activaremos el servicio sddm para iniciar sesión.
 ```zsh
@@ -59,6 +59,11 @@ cd Carpeta_Personal_Root
 cp -r .p10k.zsh /boot/root/
 cd
 sudo ln -sf ~/.zshrc /root/.zshrc
+```
+Instalamos fzf tanto en nuestro usuario como en root
+```zsh
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
 ```
 
 Reinicie el ordenador y con esto debería de ser suficiente para que el entorno funcione teoricamente, no obstante, pueden ocurrir errores con la polybar debido a los nombres de las tarjetas de red, no obstante lo podrá corregir en el archivo ~/.config/polybar/current.ini en particular en los modulos wifi y ethernet.
