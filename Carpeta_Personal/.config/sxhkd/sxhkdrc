@@ -40,7 +40,7 @@ ctrl + alt + v
 
 # Abrir Flameshot (Captura de pantalla)
 super + s 
-	flameshot launcher
+	flameshot gui
  
 # Brillo
 
@@ -49,6 +49,14 @@ XF86MonBrightnessUp
 
 XF86MonBrightnessDown
         brightnessctl set 2%-
+
+# Activar Redshift
+ctrl + shift + XF86MonBrightnessUp
+    redshift -O 3400
+
+# Desactivar Redshift
+ctrl + shift + XF86MonBrightnessDown
+    redshift -x
 
 # Volumen
 

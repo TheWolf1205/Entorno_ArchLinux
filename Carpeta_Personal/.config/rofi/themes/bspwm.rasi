@@ -2,7 +2,7 @@ configuration {
 	modi:					"drun";
 	display-drun: 			"Apps";
 	drun-display-format:    "{name}";
-	font:				    "Iosevka 8";
+	font:				    "Hack Nerd Font 8";
 	show-icons:              true;
 	icon-theme: 			"Papirus";
 }
@@ -23,7 +23,7 @@ configuration {
 
 window {
 	transparency: "real";
-	height: 92%;
+	height: 97%;
   width: 22%;
 	location: west;
 	x-offset: 0.5%;
@@ -40,7 +40,7 @@ inputbar {
 }
 
 textbox {
-    str: " ";
+    str: " ";
     expand: false;
     padding: 0 1% 0;
     horizontal-align: 0.5;

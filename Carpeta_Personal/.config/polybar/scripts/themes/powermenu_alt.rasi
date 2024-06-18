@@ -1,15 +1,15 @@
 configuration {
     font:                           "Iosevka Nerd Font 10";
     show-icons:                     false;
-    icon-theme: 		    " Papirus";
-    display-drun: 					":";
+    icon-theme: 		                " Papirus";
+    display-drun: 					        ":";
     drun-display-format:            "{name}";
     threads:                        0;
     scroll-method:                  0;
     disable-history:                false;
     fullscreen:                     false;
-	hide-scrollbar: 				true;
-	sidebar-mode: 					false;
+	  hide-scrollbar: 				        true;
+	  sidebar-mode: 					        false;
     location:                       3;
 }
 
@@ -20,7 +20,7 @@ window {
     background-color:               @background;
     text-color:                     @foreground;
     border-radius:                  20px;
-    height:                         30%;
+    height:                         21%;
     width:                          12%;
     x-offset:                       -10;
     y-offset:                       50;

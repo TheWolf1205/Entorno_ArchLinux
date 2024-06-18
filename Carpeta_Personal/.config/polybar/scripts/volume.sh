@@ -12,8 +12,8 @@ mute=$(echo "$amixer_output" | grep -oE '\[(on|off)\]' | tail -1 | sed 's/^.//')
 
 # Format output
 if [ "$mute" = "off]" ]; then
-    echo ""
+    echo " 00"
 else
-    echo "$volume%" | sed 's/%//'
+    echo "  $volume" | sed 's/%//'
 fi
 

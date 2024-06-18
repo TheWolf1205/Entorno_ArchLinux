@@ -22,49 +22,57 @@ xsetroot -cursor_name left_ptr &
 #Notificaciones para la bateria
 systemctl --user restart dunst &
 
-python3 /home/TheWolf/Programas/bateria.py &
+python3 ~/.config/polybar/scripts/bateria.py &
 
 # Gpaste
 gpaste-client start &
 
+#polybar barra -c ~/.config/polybar/current.ini &
+
 #Icono Arch - Rofi
-polybar log -c ~/.config/polybar/current.ini &
+#polybar log -c ~/.config/polybar/current.ini &
 
 #Fecha
-polybar secondary -c ~/.config/polybar/current.ini &
+#polybar secondary -c ~/.config/polybar/current.ini &
 
 #Volumen
-polybar volumen -c ~/.config/polybar/current.ini &
+#polybar volumen -c ~/.config/polybar/current.ini &
 
 #Bateria
-polybar top -c ~/.config/polybar/current.ini &
+#polybar top -c ~/.config/polybar/current.ini &
 
 #SysMenu
-polybar primary -c ~/.config/polybar/current.ini &
+#polybar primary -c ~/.config/polybar/current.ini &
 
 #Wifi
-polybar terceary -c ~/.config/polybar/current.ini &
+#polybar terceary -c ~/.config/polybar/current.ini &
 
 #Memoria RAM
-polybar quaternary -c ~/.config/polybar/current.ini &
+#polybar quaternary -c ~/.config/polybar/current.ini &
 
 #CPU
-polybar cinconary -c ~/.config/polybar/current.ini &
+#polybar cinconary -c ~/.config/polybar/current.ini &
 
 #Ethernet
-polybar networkry -c ~/.config/polybar/current.ini &
+#polybar networkry -c ~/.config/polybar/current.ini &
 
 #Escritorios
-polybar primary -c ~/.config/polybar/workspace.ini &
+#polybar primary -c ~/.config/polybar/workspace.ini &
 
 #Escritorios
-polybar secondary -c ~/.config/polybar/workspace.ini &
+#polybar secondary -c ~/.config/polybar/workspace.ini &
+
+# Barra polybar
+polybar barra -c ~/.config/polybar/current.ini &
 
 #Fondo de pantalla
 bash ~/.config/polybar/scripts/fondos.sh &
 
 #Distribucion de teclado
 setxkbmap latam &
+
+#Scroll del TouchPad Antinatural
+xinput --set-prop 9 'libinput Natural Scrolling Enabled' 1 &
 
 #Picom
 pkill picom

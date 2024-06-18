@@ -1,11 +1,11 @@
 #! /bin/sh
-bspc rule -r "*"
+bspc rule -r "*" &
 
 ~/.config/bspwm/launch.sh &
 
 sxhkd &
 
-bspc monitor -d I II III IV V VI VII VIII IX X
+bspc monitor -d I II III IV V VI VII VIII IX X &
 
 # Configuración del Touchpad invertido
-xinput set-button-map 11 1 2 3 5 4 6 7
+xinput set-button-map 11 1 2 3 5 4 6 7 &
