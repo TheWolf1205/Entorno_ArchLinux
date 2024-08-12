@@ -38,8 +38,21 @@ ctrl + shift + b
 ctrl + alt + v
     gpaste-client ui
 
+# Spotify
+## Siguiente canción
+ctrl + 3
+    playerctl --player=spotify next
+
+## Anterior canción
+ctrl + 1
+    playerctl --player=spotify previous
+
+## Pausar/Reanudar canción
+ctrl + 2
+    ~/.config/sxhkd/toggle_spotify.sh
+
 # Abrir Flameshot (Captura de pantalla)
-super + s 
+@Print
 	flameshot gui
  
 # Brillo
