@@ -24,12 +24,12 @@ case $chosen in
         systemctl reboot
         ;;
     $lock)
-        i3lock
+        slock
         ;;
     $suspend)
         mpc -q pause
         amixer set Master mute
-        systemctl suspend
+        bash ~/.config/polybar/scripts/suspend.sh
         ;;
     $logout)
         openbox --exit

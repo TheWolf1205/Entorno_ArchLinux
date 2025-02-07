@@ -1,6 +1,8 @@
 #! /bin/sh
 bspc rule -r "*" &
 
+bspc rule -a surf state=floating rectangle=800x600+50+40 &
+
 ~/.config/bspwm/launch.sh &
 
 sxhkd &

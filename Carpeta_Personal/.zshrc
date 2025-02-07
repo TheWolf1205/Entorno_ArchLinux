@@ -1,5 +1,6 @@
 #Fix the Java Problem
 export _JAVA_AWT_WM_NONREPARENTING=1
+export OPENAI_API_KEY="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"
 
 # Enable Powerlevel10k instant prompt. Should stay at the top of ~/.zshrc.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -43,7 +44,7 @@ zstyle ':completion:*' verbose true
 
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
-source /home/TheWolf/powerlevel10k/powerlevel10k.zsh-theme
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
@@ -64,6 +65,8 @@ alias comandos="bat /home/TheWolf/.config/sxhkd/sxhkdrc"
 alias img="kitty +kitten icat"
 alias cpp="rsync -avrhP --info=progress2"
 alias camara="mplayer tv:// -tv driver=v4l2:width=640:height=360:device=/dev/video0:fps=60:outfmt=yuy2"
+alias reflector="sudo reflector --country 'ES' --latest 20 --sort rate --save /etc/pacman.d/mirrorlist"
+alias matlab="bash /usr/local/MATLAB/R2024b/bin/matlab"
 mvp() {
   local args=( "$@" )
   rsync -avrhP --info=progress2 "${args[@]}"
@@ -123,7 +126,7 @@ function fzf-lovely(){
 	                  cat {}) 2> /dev/null | head -500'
 
 	else
-	        fzf -m --preview '[[ $(file --mime {}) =~ binary ]] &&
+        fzf -m --preview '[[ $(file --mime {}) =~ binary ]] &&
 	                         echo {} is a binary file ||
 	                         (bat --style=numbers --color=always {} ||
 	                          highlight -O ansi -l {} ||
@@ -148,3 +151,6 @@ bindkey "^[[1;3C" forward-word
 bindkey "^[[1;3D" backward-word
 bindkey "^[1;4C" vi-forward-word
 bindkey "^[1;4D" vi-backward-word
+
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+export WAYDROID_ACTIVE_DISPLAY=$(echo $DISPLAY)
