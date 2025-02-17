@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Icon=preferences-desktop-keyboard
+Name=Keyboard Settings setup
+Comment=Sets up your preferred keyboard settings
+Exec=setxkbmap  "latam" -model pc105
+OnlyShowIn=LXDE

@@ -1,0 +1,308 @@
+# -- SNIPPETS --
+#
+# new glossary entry
+snippet gloss "Glossary Entry"  b
+	\newglossaryentry{${1:entry}}{
+			name = {${2:name}},
+			symbol = {\ensuremath{${3:symbol}}},
+			description = {${4:description}}
+	}
+#
+
+# \begin{}...\end{}
+snippet begin "Begin End"
+	\begin{${1}}
+		$0	
+	\end{$1}
+#
+
+# Align
+snippet align "Align Env" b
+	\begin{align$1}
+		$0
+	\end{align$1}
+#
+
+# Enumerate
+snippet enumerate "Enumerate" b
+	\begin{enumerate}
+		\item $0
+	\end{enumerate}
+#
+
+# Itemize
+snippet itemize "Itemize" b
+	\begin{itemize}
+		\item $0
+	\end{itemize}
+#
+
+# Cases
+snippet casos "Entorno de Casos"
+	${1:LHS}=	
+	\begin{cases}
+		${2:Value}, &\text{ ${3:coment} } ${4:case} \text{,} \\\\
+		${5:Value}, &\text{ ${6:comment} } ${7:otherwise} .
+	\end{cases}${0}
+#
+
+# Entorno de imagen
+snippet figure "Figure environment" b
+	\begin{figure}
+	\begin{center}
+		\includegraphics[scale=${1}]{Figures/${2}}
+	\end{center}
+	\caption{${3}}
+	\label{fig:${4}}
+	\end{figure}
+	${0}
+#
+
+snippet includegraphics "Includegraphics enviroment" bi
+	\begin{center}
+		\includegraphics[scale=$1]{$2}
+	\end{center}
+	$0
+
+snippet lemma "Lemma environment" bi
+	\begin{lemma}{$1}
+		$0
+	\end{lemma}
+
+snippet proposition "Proposition environment" bi
+	\begin{proposition}{$1}
+		$0
+	\end{proposition}
+
+snippet theorem "Theorem environment" bi
+	\begin{theorem}{$1}
+		$0
+	\end{theorem}
+
+snippet proof "Proof environment" bi
+	\begin{proof} 
+		$0
+	\end{proof}
+
+snippet definition "Definition environment bi
+	\begin{definition}{$1}
+		$0
+	\end{definition}
+
+snippet note "Note environment" bi
+	\begin{note}{$1}
+		$0
+	\end{note}
+
+snippet notation "Notation environment" bi
+	\begin{notation}{$1}
+		$0
+	\end{notation}
+
+snippet corollary "Corollary environment" bi
+	\begin{corollary}{$1}
+		$0
+	\end{corollary}
+
+snippet example "Example environment" bi
+	\begin{example}{$1}
+		$0
+	\end{example}
+
+snippet solution "Solution environment" bi
+	\begin{solution}
+		$0
+	\end{solution}
+
+snippet equation "Equation environment" bi
+	\begin{equation}
+		$0
+	\end{equation}
+
+snippet \R "Real" bi
+	\mathbb{R}^{$1}$0
+
+snippet \toro "Toro" bi
+	\mathbb{T}^{$1}$0
+
+snippet \S "Schartz" bi
+	\mathcal{S}$1($2)$0
+
+snippet \Z "Enteros" bi
+	\mathbb{Z}^{$1}$0
+
+snippet \N "Naturales" bi
+	\mathbb{N}^{$1}$0
+
+snippet \C "Complejos" bi
+	\mathbb{C}^{$1}$0
+
+snippet \M "Maximal" bi
+	\mathcal{M}$1($2)$0
+
+# frac
+snippet \frac{}{} "Fraccion" bi
+	\frac{$1}{$2}$0
+
+# Integral
+snippet int "Integral" bi
+	\int_{$1}^{$2}$0
+
+# Corchetes Largos
+snippet \\() "Corchetes Largos" bi
+	\left( $1 \right)$0
+
+# valor absoluto largos
+snippet \\|| "Valor absoluto Largos" bi
+	\left| $1 \right|$0
+
+# Corchete Cuadrado
+snippet \\[] "Corchetes Cuadrados Largos" bi
+	\left[ $1 \right]$0
+
+# Corchete Japones
+snippet \< "Corchetes Japones" bi
+	\langle $1 \rangle$0
+
+# Derivada parcial fracción
+snippet \dpf "Derivada parcial fracción" bi
+	\frac{\partial $1}{\partial $2}$0
+
+# Derivada Parcial indices
+snippet \dp "Derivada Parcial indices" bi
+	\partial^{$1}$0
+
+# Límite
+snippet limite "Límite" bi
+	\lim_{${1:x} \to ${2:a}}$0
+
+# raya superior
+snippet \overline "Overline" bi
+	\overline{$1}$0
+
+# matrix parentheses 2x2
+snippet pmatrix2x2 "matrix parentheses 2x2" bi
+	\begin{pmatrix}
+		${1:a_{11}} & ${2:a_{12}} \\\\
+		${3:a_{21}} & ${4:a_{22}}
+	\end{pmatrix}
+	$0
+
+# matrix parentheses 3x3
+snippet pmatrix3x3 "matrix parentheses 3x3" bi
+	\begin{pmatrix}
+		${1:a_{11}} & ${2:a_{12}} & ${3:a_{13}}\\\\
+		${4:a_{21}} & ${5:a_{22}} & ${6:a_{23}}\\\\
+		${7:a_{31}} & ${8:a_{32}} & ${9:a_{33}}
+	\end{pmatrix}
+	$0
+
+# matrix parentheses 4x4
+snippet pmatrix4x4 "matrix parentheses 4x4" bi
+	\begin{pmatrix}
+		${1:a_{11}} & ${2:a_{12}} & ${3:a_{13}} & ${4:a_{14}} \\\\
+		${5:a_{21}} & ${6:a_{22}} & ${7:a_{23}} & ${8:a_{24}} \\\\
+		${9:a_{31}} & ${10:a_{32}} & ${11:a_{33}} & ${12:a_{34}} \\\\
+		${13:a_{41}} & ${14:a_{42}} & ${15:a_{43}} & ${16:a_{44}}
+	\end{pmatrix}
+	$0
+
+# matrix parentheses 5x5
+snippet pmatrix5x5 "matrix parentheses 5x5" bi
+	\begin{pmatrix}
+		${1:a_{11}} & ${2:a_{12}} & ${3:a_{13}} & ${4:a_{14}} & ${5:a_{15}} \\\\
+		${6:a_{21}} & ${7:a_{22}} & ${8:a_{23}} & ${9:a_{24}} & ${10:a_{25}} \\\\
+		${11:a_{31}} & ${12:a_{32}} & ${13:a_{33}} & ${14:a_{34}} & ${15:a_{35}} \\\\
+		${16:a_{41}} & ${17:a_{42}} & ${18:a_{43}} & ${19:a_{44}} & ${20:a_{45}} \\\\
+		${21:a_{51}} & ${22:a_{52}} & ${23:a_{53}} & ${24:a_{54}} & ${25:a_{55}}
+	\end{pmatrix}
+	$0
+
+# matrix parentheses 6x6
+snippet pmatrix6x6 "matrix parentheses 6x6" bi
+	\begin{pmatrix}
+		${1:a_{11}} & ${2:a_{12}} & ${3:a_{13}} & ${4:a_{14}} & ${5:a_{15}} & ${6:a_{16}} \\\\
+		${7:a_{21}} & ${8:a_{22}} & ${9:a_{23}} & ${10:a_{24}} & ${11:a_{25}} & ${12:a_{26}} \\\\
+		${13:a_{31}} & ${14:a_{32}} & ${15:a_{33}} & ${16:a_{34}} & ${17:a_{35}} & ${18:a_{36}} \\\\
+		${19:a_{41}} & ${20:a_{42}} & ${21:a_{43}} & ${22:a_{44}} & ${23:a_{45}} & ${24:a_{46}} \\\\
+		${25:a_{51}} & ${26:a_{52}} & ${27:a_{53}} & ${28:a_{54}} & ${29:a_{55}} & ${30:a_{56}} \\\\
+		${31:a_{61}} & ${32:a_{62}} & ${33:a_{63}} & ${34:a_{64}} & ${35:a_{65}} & ${36:a_{66}}
+	\end{pmatrix}
+	$0
+
+# matrix parentheses 7x7
+snippet pmatrix7x7 "matrix parentheses 7x7" bi
+	\begin{pmatrix}
+		${1:a_{11}} & ${2:a_{12}} & ${3:a_{13}} & ${4:a_{14}} & ${5:a_{15}} & ${6:a_{16}} & ${7:a_{17}} \\\\
+		${8:a_{21}} & ${9:a_{22}} & ${10:a_{23}} & ${11:a_{24}} & ${12:a_{25}} & ${13:a_{26}} & ${14:a_{27}} \\\\
+		${15:a_{31}} & ${16:a_{32}} & ${17:a_{33}} & ${18:a_{34}} & ${19:a_{35}} & ${20:a_{36}} & ${21:a_{37}} \\\\
+		${22:a_{41}} & ${23:a_{42}} & ${24:a_{43}} & ${25:a_{44}} & ${26:a_{45}} & ${27:a_{46}} & ${28:a_{47}} \\\\
+		${29:a_{51}} & ${30:a_{52}} & ${31:a_{53}} & ${32:a_{54}} & ${33:a_{55}} & ${34:a_{56}} & ${35:a_{57}} \\\\
+		${36:a_{61}} & ${37:a_{62}} & ${38:a_{63}} & ${39:a_{64}} & ${40:a_{65}} & ${41:a_{66}} & ${42:a_{67}} \\\\
+		${43:a_{71}} & ${44:a_{72}} & ${45:a_{73}} & ${46:a_{74}} & ${47:a_{75}} & ${48:a_{76}} & ${49:a_{77}}
+	\end{pmatrix}
+	$0
+
+# matrix bracket 2x2
+snippet bmatrix2x2 "matrix bracket 2x2" bi
+	\begin{bmatrix}
+		${1:a_{11}} & ${2:a_{12}} \\\\
+		${3:a_{21}} & ${4:a_{22}}
+	\end{bmatrix}
+	$0
+
+# matrix bracket 3x3
+snippet bmatrix3x3 "matrix bracket 3x3" bi
+	\begin{bmatrix}
+		${1:a_{11}} & ${2:a_{12}} & ${3:a_{13}}\\\\
+		${4:a_{21}} & ${5:a_{22}} & ${6:a_{23}}\\\\
+		${7:a_{31}} & ${8:a_{32}} & ${9:a_{33}}
+	\end{bmatrix}
+	$0
+
+# matrix bracket 4x4
+snippet bmatrix4x4 "matrix bracket 4x4" bi
+	\begin{bmatrix}
+		${1:a_{11}} & ${2:a_{12}} & ${3:a_{13}} & ${4:a_{14}} \\\\
+		${5:a_{21}} & ${6:a_{22}} & ${7:a_{23}} & ${8:a_{24}} \\\\
+		${9:a_{31}} & ${10:a_{32}} & ${11:a_{33}} & ${12:a_{34}} \\\\
+		${13:a_{41}} & ${14:a_{42}} & ${15:a_{43}} & ${16:a_{44}}
+	\end{bmatrix}
+	$0
+
+# matrix bracket 5x5
+snippet bmatrix5x5 "matrix bracket 5x5" bi
+	\begin{bmatrix}
+		${1:a_{11}} & ${2:a_{12}} & ${3:a_{13}} & ${4:a_{14}} & ${5:a_{15}} \\\\
+		${6:a_{21}} & ${7:a_{22}} & ${8:a_{23}} & ${9:a_{24}} & ${10:a_{25}} \\\\
+		${11:a_{31}} & ${12:a_{32}} & ${13:a_{33}} & ${14:a_{34}} & ${15:a_{35}} \\\\
+		${16:a_{41}} & ${17:a_{42}} & ${18:a_{43}} & ${19:a_{44}} & ${20:a_{45}} \\\\
+		${21:a_{51}} & ${22:a_{52}} & ${23:a_{53}} & ${24:a_{54}} & ${25:a_{55}}
+	\end{bmatrix}
+	$0
+
+# matrix bracket 6x6
+snippet bmatrix6x6 "matrix bracket 6x6" bi
+	\begin{bmatrix}
+		${1:a_{11}} & ${2:a_{12}} & ${3:a_{13}} & ${4:a_{14}} & ${5:a_{15}} & ${6:a_{16}} \\\\
+		${7:a_{21}} & ${8:a_{22}} & ${9:a_{23}} & ${10:a_{24}} & ${11:a_{25}} & ${12:a_{26}} \\\\
+		${13:a_{31}} & ${14:a_{32}} & ${15:a_{33}} & ${16:a_{34}} & ${17:a_{35}} & ${18:a_{36}} \\\\
+		${19:a_{41}} & ${20:a_{42}} & ${21:a_{43}} & ${22:a_{44}} & ${23:a_{45}} & ${24:a_{46}} \\\\
+		${25:a_{51}} & ${26:a_{52}} & ${27:a_{53}} & ${28:a_{54}} & ${29:a_{55}} & ${30:a_{56}} \\\\
+		${31:a_{61}} & ${32:a_{62}} & ${33:a_{63}} & ${34:a_{64}} & ${35:a_{65}} & ${36:a_{66}}
+	\end{bmatrix}
+	$0
+
+# matrix bracket 7x7
+snippet bmatrix7x7 "matrix bracket 7x7" bi
+	\begin{bmatrix}
+		${1:a_{11}} & ${2:a_{12}} & ${3:a_{13}} & ${4:a_{14}} & ${5:a_{15}} & ${6:a_{16}} & ${7:a_{17}} \\\\
+		${8:a_{21}} & ${9:a_{22}} & ${10:a_{23}} & ${11:a_{24}} & ${12:a_{25}} & ${13:a_{26}} & ${14:a_{27}} \\\\
+		${15:a_{31}} & ${16:a_{32}} & ${17:a_{33}} & ${18:a_{34}} & ${19:a_{35}} & ${20:a_{36}} & ${21:a_{37}} \\\\
+		${22:a_{41}} & ${23:a_{42}} & ${24:a_{43}} & ${25:a_{44}} & ${26:a_{45}} & ${27:a_{46}} & ${28:a_{47}} \\\\
+		${29:a_{51}} & ${30:a_{52}} & ${31:a_{53}} & ${32:a_{54}} & ${33:a_{55}} & ${34:a_{56}} & ${35:a_{57}} \\\\
+		${36:a_{61}} & ${37:a_{62}} & ${38:a_{63}} & ${39:a_{64}} & ${40:a_{65}} & ${41:a_{66}} & ${42:a_{67}} \\\\
+		${43:a_{71}} & ${44:a_{72}} & ${45:a_{73}} & ${46:a_{74}} & ${47:a_{75}} & ${48:a_{76}} & ${49:a_{77}}
+	\end{bmatrix}
+	$0
+

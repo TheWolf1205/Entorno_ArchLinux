@@ -1,0 +1,108 @@
+1. Bootea USB y accede a ella
+	
+2. Configura idioma del teclado
+	loadkeys (es, la-latin1, etc)
+
+3. Conectate a internet.
+	Si es ethernet se hará solo, si no introduce el comando:
+	iwctl --passphrase "contraseña" station "puerto" connect "nombre de la red"
+
+4. Actualiza las keys
+	pacman-key --refresh-keys
+	pacman -Sy archlinux-keyring
+
+5. Crea las particiones
+	cfdisk para abrir el menú:
+	Partición de Boot 512M File System
+	Partición swap 4G (o lo que quieras) Linux Swap
+	Partición de archivos X G Linux filesystem
+	Write en las 3 y quit para salir
+
+6. Formatea las particiones
+	Para la Boot:
+	mkfs.vfat -F32 /dev/sdax siendo esa x el número de la partición, está puede verse con fdisk -l
+	Para los archivos del sistema
+	mkfs.ext4 /dev/sday siendo esa y el número de la partición
+	Para la Swap:
+	mkswap /dev/sdaz siendo z el número de la partición
+	Luego ejecute swapon para montarla
+
+7. Montar particiones
+	Primero montar la de los archivos del sistema
+	mount /dev/sday /mnt
+	Luego crear carpetas:
+	mkdir /mnt/boot
+	mkdir /mnt/boot/efi
+	Montar la raíz
+	mount /dev/sdax /mnt/boot/efi
+
+8. Descargar paquetes para empezar a usarlo (mi recomendación)
+	pacstrap /mnt linux linux-firmware base base-devel grub os-prober efibootmgr networkmanager dhcpcd wpa_supplicant netctl dialog ntfs-3g nano vim xdg-user-dirs
+
+9. generar fstab
+	genfstab /mnt >> /mnt/etc/fstab
+
+10. Configurar zona horaria, reloj y distribución de teclado
+	arch-chroot /mnt
+	Poner nombre al PC
+	Echo "nombre del PC" > /etc/hostname
+	Ver lista de zonas horarias
+	timedatectl list-timezones
+	En mi caso
+	ln -sf /usr/share/zoneinfo/America/Bogota /etc/localtime
+	Luego:
+	nano /etc/locale.gen
+	Ahí descomentamos nuestro idioma, en mi caso es_ES.UTF-8 UTF-8
+	
+	sudo nano /etc/environment
+	LANG=es_CO.UTF-8
+	LC_CTYPE="es_CO.UTF-8"
+	LC_NUMERIC="es_CO.UTF-8"
+	LC_TIME="es_CO.UTF-8"
+	LC_COLLATE="es_CO.UTF-8"
+	LC_MONETARY="es_CO.UTF-8"
+	LC_MESSAGES="es_CO.UTF-8"
+	LC_PAPER="es_CO.UTF-8"
+	LC_NAME="es_CO.UTF-8"
+	LC_ADDRESS="es_CO.UTF-8"
+	LC_TELEPHONE="es_CO.UTF-8"
+	LC_MEASUREMENT="es_CO.UTF-8"
+	LC_IDENTIFICATION="es_CO.UTF-8"
+	
+	Por último
+	locale-gen
+	hwclock -w
+	Para el teclado en mi caso
+	echo KEYMAP=la-latin1 > /etc/vconsole.conf
+	echo LANG=es_ES.UTF8 > /etc/locale.conf
+
+11. Configurar Grub
+	grub-install --efi-directory=/boot/efi --bootloader -id="Arch Linux" --target=x86_64-efi
+	nano /etc/default/grub
+	Descomenta GRUB_DISABLE_OS_PROBER=false
+	grub-mkconfig -o /boot/grub/grub.cfg
+
+12. Crear usuarios y constraseñas
+	Para contraseña del root
+	passwd 
+	Para crear nuevo usuario
+  useradd -m "nombre"
+  passwd "nombre"
+  usermod -aG wheel "nombre"
+
+  # Crear directorios estándar
+  su - "nombre" -c "xdg-user-dirs-update"
+  
+  # Activar sudo
+	nano /etc/sudoers
+	Descomentamos:
+	## uncomment to allow members of group wheel to execute any colmando
+	%wheel ALL=(ALL:ALL) ALL
+
+13. Reiniciar y activar Internet
+	systemctl start NetworkManager.service
+	systemctl enable NetworkManager.service
+  systemctl enable wpa_supplicant
+  systemctl start wpa_supplicant
+
+	Y ya estaría la base de Arch Linux instalada, lo demás es tu elección :3	

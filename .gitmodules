@@ -1,0 +1,3 @@
+[submodule "Carpeta_Personal_Root/powerlevel10k"]
+	path = Carpeta_Personal_Root/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k.git

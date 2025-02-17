@@ -1,0 +1,14 @@
+[SddmGreeterTheme]
+Name=Relaxtronaut
+Description=Space themed greeter
+Author=Serra Pi
+License=GPL-3.0-or-later
+Type=sddm-theme
+Version=1.2
+Website=https://github.com/MarianArlt/sddm-sugar-dark
+Screenshot=Preview.png
+MainScript=Main.qml
+ConfigFile=theme.conf
+TranslationsDirectory=translations
+Theme-Id=Relaxtronaut
+Theme-API=2.11
