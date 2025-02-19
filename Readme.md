@@ -31,7 +31,7 @@ git clone https://github.com/TheWolf1205/Entorno_ArchLinux.git
 ```
 Estos serán los paquetes necesarios para que el entorno funcione correctamente, recuerde que si usted no usa *paru*, también puede usar *yay* sin ningún problema, solo reemplace.
 ```zsh
-paru -Syu arandr neofetch neovim zathura zathura-pdf-poppler wget sddm sxhkd bspwm ttf-hack-nerd ttf-jetbrains-mono-nerd ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono ttf-iosevka-nerd kitty lsd bat mdcat feh picom lxsession dunst gpaste polybar rofi papirus-icon-theme alsa-utils alsa-plugins alsa-firmware sof-firmware pamixer spotify firejail brave-bin flameshot pavucontrol pulseaudio pulseaudio-alsa pulseaudio-bluetooth brightnessctl zsh zsh-syntax-highlighting zsh-autosuggestions xorg-xsetroot i3lock-color mpc python-notify2 python-psutil yad mplayer redshift playerctl surf texlive texlive-lang biber git lazygit fzf ripgrep pandoc-cli haskell-pandoc pandoc-crossref texlive-latex texlive-latexextra texlive-latexrecommended nodejs npm stylua lua-language-server wget xsel stylua unzip qt5 arc-solid-gtk-theme arc-icon-theme kvantum dolphin kdegraphics-thumbnailers kimageformats qt6-imageformats resvg kdesdk-thumbnailers ffmpegthumbs raw-thumbnailer taglib kde-thumbnailer-apk icoutils
+paru -Syu arandr neofetch neovim zathura zathura-pdf-poppler wget sddm sxhkd bspwm ttf-hack-nerd ttf-jetbrains-mono-nerd ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono ttf-iosevka-nerd kitty lsd bat mdcat feh picom lxsession dunst gpaste polybar rofi papirus-icon-theme alsa-utils alsa-plugins alsa-firmware sof-firmware pamixer spotify firejail brave-bin flameshot pavucontrol pulseaudio pulseaudio-alsa pulseaudio-bluetooth brightnessctl zsh zsh-syntax-highlighting zsh-autosuggestions xorg-xsetroot i3lock-color mpc python-notify2 python-psutil yad mplayer redshift playerctl surf texlive texlive-lang biber git lazygit fzf ripgrep pandoc-cli haskell-pandoc pandoc-crossref texlive-latex texlive-latexextra texlive-latexrecommended nodejs npm stylua lua-language-server wget xsel stylua unzip qt5 arc-solid-gtk-theme arc-icon-theme kvantum dolphin kdegraphics-thumbnailers kimageformats qt6-imageformats resvg kdesdk-thumbnailers ffmpegthumbs raw-thumbnailer taglib kde-thumbnailer-apk icoutils lxappearance-gtk3
 ```
 Puede usar requisitos.sh para facilidad.
 Ahora activaremos el servicio sddm para iniciar sesión.
@@ -105,6 +105,7 @@ por ultimo guardamos y:
 sudo os-prober
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
+*Comentario:* Si gusta de un modo oscuro en apps compatibles, puede configurarlo en lxappearance.
 
 Reinicie el ordenador y con esto debería de ser suficiente para que el entorno funcione teóricamente, no obstante, pueden ocurrir errores con la polybar debido a los nombres de las tarjetas de red, no obstante lo podrá corregir en el archivo ~/.config/polybar/current.ini en particular en los módulos wifi y ethernet.\\
 
